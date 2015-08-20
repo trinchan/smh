@@ -16,17 +16,14 @@ body {
   -moz-transform: translateX(-50%) translateY(0%);
   -webkit-transform: translateX(-50%) translateY(0%);
   transform: translateX(-50%) translateY(0%);
-  background-color: rgba(0, 0, 0, .017);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .01);
-  padding: 10px;
   margin-bottom: -40px;
 }
 
-.textLoad {
-  background-image: url(/assets/images/load.gif);
-  background-repeat: no-repeat;
-  width: 128px;
-  height: 43px;
+.container,
+.time {
+  background-color: rgba(0, 0, 0, .017);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .01);
+  padding: 10px;
 }
 
 .time {
@@ -37,13 +34,21 @@ body {
   padding-right: 10px;
 }
 
-.time.fadeIn {
+.time.fadeIn,
+.time.fadeOut {
   opacity: 1;
   top: 50px;
 }
 
 .time.fadeOut {
   opacity: 0;
+}
+
+.textLoad {
+  background-image: url(/assets/images/load.gif);
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 43px;
 }
 
 .bubble {
