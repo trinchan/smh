@@ -27,7 +27,6 @@
     {from: 'right', text: 'still miss her'}
   ];
 
-<<<<<<< HEAD
   var actOneSceneTwo = [
     {from: 'left', text: 'Hey'},
     {from: 'left', text: 'Are you there'},
@@ -42,9 +41,8 @@
     {from: 'left', text: "So that's it? You're just gonna leave? What about Ashley she's your best friend"},
     {from: 'right', text: "Sorry I have to go. Bye"},
   ];
-=======
+
   var messageContainer = document.getElementById('mainText');
->>>>>>> more advanced conversation
 
   function nextMessage() {
     var message = messages.shift();
