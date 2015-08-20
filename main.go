@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"flag"
 	"html/template"
 	"io/ioutil"
 	"log"
@@ -10,6 +10,8 @@ import (
 	"strings"
 	"time"
 )
+
+var addr string
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	type Image struct {
@@ -46,8 +48,10 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	flag.StringVar(&addr, "addr", "127.0.0.1:8080", "address to run on")
+
 	http.HandleFunc("/assets/", AssetsHandler)
 	http.HandleFunc("/", handler)
-	fmt.Println("app running on port 8000")
-	http.ListenAndServe("127.0.0.1:8000", nil)
+	log.Printf("Running server on addr %s", addr)
+	http.ListenAndServe(addr, nil)
 }
