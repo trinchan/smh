@@ -7,6 +7,7 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 )
@@ -48,6 +49,6 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/assets/", AssetsHandler)
 	http.HandleFunc("/", handler)
-	fmt.Println("app running on port 8000")
-	http.ListenAndServe("127.0.0.1:8000", nil)
+	fmt.Println("app running on port: %s", os.Getenv("PORT"))
+	http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("PORT")), nil)
 }
