@@ -9,9 +9,25 @@
     {from: 'left', text: 'Yeah no, she\'s not the one. Never could be'},
     {from: 'right', text: 'But I want her to be the one', pause: 200},
     {from: 'left', text: 'She\'d be a great one'},
-    {from: 'right', text: 'I just still miss her'}
+    {from: 'right', text: 'I just still miss her'},
+    {from: 'right', text: 'still miss her', pause: 3000},
+    {from: 'left', text: 'I\'m here for you brother'},
+    {from: 'right', text: 'But like I just don\'t know why, you know?', pause: 100},
+    {from: 'right', text: 'Like if you\'re gonna exist and be there, then like why would you not do something for finding that', pause: 100},
+    {from: 'left', text: 'Totally'},
+    {from: 'right', text: 'You get what I\'m saying?'},
+    {from: 'left', text: 'Honestly, no but that\'s alright, keep on keepin on', pause: 3000},
+    {from: 'left', text: ''},
+    {from: 'left', text: '', pause: 2000},
+    {from: 'right', text: 'Duck my life'},
+    {from: 'left', text: 'Duck?'},
+    {from: 'right', text: 'Ugh autocorrect. WHY IS THE WORLD AGAINST ME?!?>!'},
+    {from: 'right', text: 'AGAINST US?!', pause: 100},
+    {from: 'left', text: '', pause: 2000},
+    {from: 'right', text: 'still miss her'}
   ];
 
+<<<<<<< HEAD
   var actOneSceneTwo = [
     {from: 'left', text: 'Hey'},
     {from: 'left', text: 'Are you there'},
@@ -26,20 +42,29 @@
     {from: 'left', text: "So that's it? You're just gonna leave? What about Ashley she's your best friend"},
     {from: 'right', text: "Sorry I have to go. Bye"},
   ];
+=======
+  var messageContainer = document.getElementById('mainText');
+>>>>>>> more advanced conversation
 
   function nextMessage() {
     var message = messages.shift();
     var className = 'bubble' + (message.from === 'left' ? '' : ' bubble-alt');
-    document.getElementById('mainText').innerHTML += '<div class="' + className + '">' +
+    messageContainer.innerHTML += '<div class="' + className + '">' +
                                                         '<div class="textLoad"></div>' +
                                                     '</div>';
+    var typingTime = 1000 * (message.text.length ? message.text.length / 10 : Math.random() * 5);
     setTimeout(function() {
       var bubbles = document.getElementsByClassName(className);
-      bubbles[bubbles.length - 1].textContent = message.text;
+      if (message.text) {
+        bubbles[bubbles.length - 1].textContent = message.text;
+      } else {
+        bubbles[0].parentNode.removeChild(bubbles[bubbles.length - 1]);
+      }
+      messageContainer.scrollTop = messageContainer.scrollHeight;
       if (messages.length) {
         setTimeout(nextMessage, messages[0].pause || (4 * Math.random() * 1000));
       }
-    }, (message.text.length / 10) * 1000);
+    }, typingTime);
   }
   setTimeout(function() {
     document.getElementById('mainText').textContent = '';
