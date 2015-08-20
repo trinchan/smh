@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"math/rand"
@@ -42,5 +43,6 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/assets/", AssetsHandler)
 	http.HandleFunc("/", handler)
+	fmt.Println("app running on port 8000")
 	http.ListenAndServe("127.0.0.1:8000", nil)
 }
