@@ -49,6 +49,6 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/assets/", AssetsHandler)
 	http.HandleFunc("/", handler)
-	fmt.Println("app running on port: %s", os.Getenv("PORT"))
+	fmt.Printf("app running on port: %s\n", os.Getenv("PORT"))
 	http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("PORT")), nil)
 }

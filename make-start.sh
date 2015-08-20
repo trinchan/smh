@@ -4,6 +4,6 @@ echo "============================================"
 echo " Still missing her... "
 echo "============================================"
 
-go run main.go
+godep go run main.go
 
 exit 0
