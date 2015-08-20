@@ -29,6 +29,7 @@ body {
   opacity: 0;
   position: fixed;
   top: 50%;
+  -moz-transition: 2.5s;
   -webkit-transition: 2.5s;
   transition: 2.5s;
   padding-right: 10px;
@@ -65,11 +66,8 @@ body {
   color: #333;
 	background-color: #fff;
 	border: solid 1px rgba(200, 200, 200, 0.5);
-	/* vendor rules */
 	border-radius: 20px;
-	/* vendor rules */
 	box-shadow: inset 0 5px 5px rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
-	/* vendor rules */
 	box-sizing: border-box;
 	clear: both;
 	float: left;
@@ -80,7 +78,10 @@ body {
 	width: auto;
 	max-width: 500px;
 	word-wrap: break-word;
-  transition: 0.5s
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 1;
 }
 
 .bubble:before, .bubble:after {
