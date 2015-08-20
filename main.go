@@ -11,8 +11,6 @@ import (
 	"time"
 )
 
-var addr string
-
 func handler(w http.ResponseWriter, r *http.Request) {
 	type Image struct {
 		Filename string
@@ -48,7 +46,9 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	var addr string
 	flag.StringVar(&addr, "addr", "127.0.0.1:8080", "address to run on")
+	flag.Parse()
 
 	http.HandleFunc("/assets/", AssetsHandler)
 	http.HandleFunc("/", handler)
