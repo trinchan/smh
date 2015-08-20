@@ -69,7 +69,7 @@
       var className = 'bubble' + (message.from === 'left' ? '' : ' bubble-alt');
       messageContainer.append($('<div>', {class: className})
                                 .append($('<div>', {class: 'textLoad'})));
-      var typingTime = 1000 * (message.text.length ? message.text.length / 10 : Math.random() * 5);
+      var typingTime = 1000 * (message.text.length ? message.text.length / 11 : Math.random() * 5);
       setTimeout(function() {
         var bubbles = document.getElementsByClassName(className);
         if (message.text) {
