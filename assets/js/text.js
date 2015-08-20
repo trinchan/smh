@@ -33,7 +33,7 @@
     {from: 'left', text: 'Hey...'},
     {from: 'left', text: 'Yeah'},
     {from: 'right', text: 'Look I\'m sorry about what I said the other night. It was wrong. I\'m going through a lot right now'},
-    {from: 'left', text: 'Josh we can\'t do this every time. I\'m sorry but it\'s over.', pause: 300},
+    {from: 'left', text: 'We can\'t keep doing this every time. I\'m sorry but it\'s over.', pause: 300},
     {from: 'right', text: 'Please just give me one more chance'},
     {from: 'left', text: "It's too late. I didn\'t tell you this but I got a job offer in Canada and I\'m leaving next month.", pause: 200},
     {from: 'right', text: 'What really? When did you find out?'},
