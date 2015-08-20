@@ -1,0 +1,30 @@
+<html>
+    <style>
+        body {
+            background-image: url("/assets/{{ .Filename }}");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            font-family: Helvetica, Arial, Open Sans;
+            color: #ffffff;
+            font-size:500%;
+        }
+        /*
+        // Thank you http://stackoverflow.com/questions/19461521/how-to-center-an-element-horizontally-and-vertically
+        */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+    </style>
+    <body>
+        <div class="container">
+            <p>still miss her</p>
+        </div>
+    </body>
+</html>
