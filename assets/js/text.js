@@ -59,7 +59,7 @@
     }
   }());
 
-  var messageContainer = document.getElementById('mainText');
+  var messageContainer = $('#mainText');
 
   function setupNextMessage(messages) {
     var counter = -1;
@@ -67,9 +67,8 @@
       counter++;
       var message = messages[counter];
       var className = 'bubble' + (message.from === 'left' ? '' : ' bubble-alt');
-      messageContainer.innerHTML += '<div class="' + className + '">' +
-                                        '<div class="textLoad"></div>' +
-                                    '</div>';
+      messageContainer.append($('<div>', {class: className})
+                                .append($('<div>', {class: 'textLoad'})));
       var typingTime = 1000 * (message.text.length ? message.text.length / 10 : Math.random() * 5);
       setTimeout(function() {
         var bubbles = document.getElementsByClassName(className);
@@ -83,14 +82,27 @@
           setTimeout(nextMessage, messages[0].pause || (4 * Math.random() * 1000));
         } else {
           setTimeout(function() {
-            var bubbles = document.getElementsByClassName('bubble');
-            for (var i = 0; i < bubbles.length; i++) {
-              bubbles[i].classList.add('fadeOut');
-            }
-            var times = document.getElementsByClassName('time');
-            times[times.length - 1].classList.remove('fadeIn');
-            times[times.length - 1].classList.add('fadeOut');
-            runNextScene();
+            var count = 0;
+            var bubbles = $('.bubble');
+            bubbles.animate({
+              opacity: 0
+            }, {
+              duration: 500,
+              complete: function() {
+                count++;
+                if (count === bubbles.length) {
+                  runNextScene();
+                }
+              }
+            });
+            $('.time').animate({
+              opacity: 0
+            }, {
+              duration: 2500,
+              complete: function() {
+                $(this).remove();
+              }
+            });
           }, 5 * 1000);
         }
       }, typingTime);
@@ -101,20 +113,22 @@
   function runNextScene() {
     var scene = nextScene();
     if (scene) {
-      messageContainer.parentNode.innerHTML += '<div class="time">' + scene.time + '</div>';
-        setTimeout(function() {
-          var times = document.getElementsByClassName('time');
-          times[times.length - 1].classList.add('fadeIn');
-        });
-        messageContainer = document.getElementById('mainText');
-        setupNextMessage(scene.messages)();
+      messageContainer.parent().append($('<div>', {
+        class: 'time',
+        text: scene.time
+      }));
+      $('.time').animate({
+        opacity: 1,
+        top: '50px',
+      }, 2500);
+      setupNextMessage(scene.messages)();
     } else {
-      messageContainer.textContent = 'still miss her';
+      messageContainer.text('still miss her');
     }
   }
 
   setTimeout(function() {
-    messageContainer.textContent = '';
+    messageContainer.text('');
     runNextScene();
   }, 10 * 1000);
 }());
