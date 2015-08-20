@@ -23,7 +23,7 @@
       if (messages.length) {
         setTimeout(nextMessage, messages[0].pause || (4 * Math.random() * 1000));
       }
-    }, (message.text.length / 15) * 1000);
+    }, (message.text.length / 10) * 1000);
   }
   setTimeout(function() {
     document.getElementById('mainText').textContent = '';

@@ -16,16 +16,14 @@ body {
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-}
-
-#mainText {
-  padding: 10px;
   background-color: rgba(0, 0, 0, .017);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .01);
+  padding: 10px;
 }
 
 .textLoad {
   background-image: url(/assets/images/load.gif);
+  background-repeat: no-repeat;
   width: 128px;
   height: 43px;
 }
