@@ -1,0 +1,2 @@
+start:
+	./make-start.sh
