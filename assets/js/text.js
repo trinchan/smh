@@ -130,5 +130,5 @@
   setTimeout(function() {
     messageContainer.text('');
     runNextScene();
-  }, 10 * 1000);
+  }, 5 * 1000);
 }());
