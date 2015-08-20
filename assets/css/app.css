@@ -29,6 +29,23 @@ body {
   height: 43px;
 }
 
+.time {
+  opacity: 0;
+  position: fixed;
+  top: 50%;
+  transition: 2.5s;
+  padding-right: 10px;
+}
+
+.time.fadeIn {
+  opacity: 1;
+  top: 50px;
+}
+
+.time.fadeOut {
+  opacity: 0;
+}
+
 .bubble {
   font-size: 30px;
   color: #333;
@@ -49,6 +66,7 @@ body {
 	width: auto;
 	max-width: 500px;
 	word-wrap: break-word;
+  transition: 0.5s
 }
 
 .bubble:before, .bubble:after {
@@ -71,6 +89,10 @@ body {
 	border-bottom-color: #fff;
 	bottom: 1px;
 	left: -5px;
+}
+
+.bubble.fadeOut {
+  opacity: 0;
 }
 
 .bubble-alt {
