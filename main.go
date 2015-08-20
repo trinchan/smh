@@ -16,7 +16,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	paths := []string{
 		"14750326756_c6ebb6fd58_o.jpg",
-		"15620064589_8e3128a648_o.jpg",
 		"17292164491_aecce9dde4_o.jpg",
 		"17841500082_a6d6347e13_o.jpg",
 		"18219838406_b096f5d7d0_o.jpg",
