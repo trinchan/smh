@@ -7,6 +7,7 @@ body {
   color: #ffffff;
   font-size:500%;
 }
+
 .container {
   position: absolute;
   top: 50%;
@@ -15,8 +16,76 @@ body {
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
-.container p {
+
+#mainText {
   padding: 10px;
   background-color: rgba(0, 0, 0, .017);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .01);
+}
+
+.textLoad {
+  background-image: url(/assets/images/load.gif);
+  width: 128px;
+  height: 43px;
+}
+
+.bubble {
+  font-size: 30px;
+  color: #333;
+	background-color: #fff;
+	border: solid 1px rgba(0, 0, 0, 0.5);
+	/* vendor rules */
+	border-radius: 20px;
+	/* vendor rules */
+	box-shadow: inset 0 5px 5px rgba(255, 255, 255, 0.4), 0 1px 3px rgba(0, 0, 0, 0.2);
+	/* vendor rules */
+	box-sizing: border-box;
+	clear: both;
+	float: left;
+	margin-bottom: 20px;
+	padding: 8px 30px;
+	position: relative;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+	width: auto;
+	max-width: 500px;
+	word-wrap: break-word;
+}
+
+.bubble:before, .bubble:after {
+	border-radius: 20px / 10px;
+	content: '';
+	display: block;
+	position: absolute;
+}
+
+.bubble:before {
+	border: 10px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	left: -7px;
+	z-index: -2;
+}
+
+.bubble:after {
+	border: 8px solid transparent;
+	border-bottom-color: #fff;
+	bottom: 1px;
+	left: -5px;
+}
+
+.bubble-alt {
+	float: right;
+}
+
+.bubble-alt:before {
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	border-radius: 20px / 10px;
+	left: auto;
+	right: -7px;
+}
+
+.bubble-alt:after {
+	border-radius: 20px / 10px;
+	left: auto;
+	right: -5px;
 }
