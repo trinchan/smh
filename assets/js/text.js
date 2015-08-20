@@ -28,18 +28,18 @@
   ];
 
   var actOneSceneTwo = [
-    {from: 'left', text: 'Hey'},
-    {from: 'left', text: 'Are you there'},
-    {from: 'right', text: 'Hey...'},
-    {from: 'right', text: 'Yeah'},
-    {from: 'left', text: 'Look I\'m sorry about what I said the other night. It was wrong. I\'m going through a lot right now'},
-    {from: 'right', text: 'Josh we can\'t do this every time. I\'m sorry but it\'s over.', pause: 300},
-    {from: 'left', text: 'Please just give me one more chance'},
-    {from: 'right', text: "It's too late. I didn\'t tell you this but I got a job offer in Canada and I\'m leaving next month.", pause: 200},
-    {from: 'left', text: 'What really? When did you find out?'},
-    {from: 'right', text: "A couple of weeks ago."},
-    {from: 'left', text: "So that's it? You're just gonna leave? What about Ashley she's your best friend"},
-    {from: 'right', text: "Sorry I have to go. Bye"},
+    {from: 'right', text: 'Hey'},
+    {from: 'right', text: 'Are you there'},
+    {from: 'left', text: 'Hey...'},
+    {from: 'left', text: 'Yeah'},
+    {from: 'right', text: 'Look I\'m sorry about what I said the other night. It was wrong. I\'m going through a lot right now'},
+    {from: 'left', text: 'Josh we can\'t do this every time. I\'m sorry but it\'s over.', pause: 300},
+    {from: 'right', text: 'Please just give me one more chance'},
+    {from: 'left', text: "It's too late. I didn\'t tell you this but I got a job offer in Canada and I\'m leaving next month.", pause: 200},
+    {from: 'right', text: 'What really? When did you find out?'},
+    {from: 'left', text: "A couple of weeks ago."},
+    {from: 'right', text: "So that's it? You're just gonna leave? What about Ashley she's your best friend"},
+    {from: 'left', text: "Sorry I have to go. Bye"},
   ];
 
   var messageContainer = document.getElementById('mainText');
