@@ -85,10 +85,11 @@
           setTimeout(function() {
             var bubbles = document.getElementsByClassName('bubble');
             for (var i = 0; i < bubbles.length; i++) {
-              bubbles[i].className += ' fadeOut';
+              bubbles[i].classList.add('fadeOut');
             }
             var times = document.getElementsByClassName('time');
-            times[times.length - 1].className = times[times.length - 1].className.replace('fadeIn', 'fadeOut');
+            times[times.length - 1].classList.remove('fadeIn');
+            times[times.length - 1].classList.add('fadeOut');
             runNextScene();
           }, 5 * 1000);
         }
@@ -103,7 +104,7 @@
       messageContainer.parentNode.innerHTML += '<div class="time">' + scene.time + '</div>';
         setTimeout(function() {
           var times = document.getElementsByClassName('time');
-          times[times.length - 1].className += ' fadeIn';
+          times[times.length - 1].classList.add('fadeIn');
         });
         messageContainer = document.getElementById('mainText');
         setupNextMessage(scene.messages)();
