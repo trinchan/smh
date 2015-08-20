@@ -1,1 +1,1 @@
-web: smh
+web: make start
