@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"io/ioutil"
 	"log"
 	"math/rand"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -14,13 +16,17 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		Filename string
 	}
 
-	paths := []string{
-		"14750326756_c6ebb6fd58_o.jpg",
-		"17292164491_aecce9dde4_o.jpg",
-		"17841500082_a6d6347e13_o.jpg",
-		"18219838406_b096f5d7d0_o.jpg",
-		"19050608439_90ef85be7c_o.jpg",
-		"19368534318_375bedb815_o.jpg",
+	var paths []string
+	dir, err := ioutil.ReadDir("assets/")
+	if err != nil {
+		log.Println("ERROR: ", err)
+		http.Error(w, "internal server error", http.StatusInternalServerError)
+		return
+	}
+	for _, f := range dir {
+		if !f.IsDir() && strings.HasSuffix(f.Name(), "jpg") {
+			paths = append(paths, f.Name())
+		}
 	}
 
 	rand.Seed(time.Now().UTC().UnixNano())
