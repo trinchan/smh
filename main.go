@@ -1,13 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"flag"
 	"html/template"
 	"io/ioutil"
 	"log"
 	"math/rand"
 	"net/http"
-	"os"
 	"strings"
 	"time"
 )
@@ -47,8 +46,12 @@ func AssetsHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	var addr string
+	flag.StringVar(&addr, "addr", "127.0.0.1:8080", "address to run on")
+	flag.Parse()
+
 	http.HandleFunc("/assets/", AssetsHandler)
 	http.HandleFunc("/", handler)
-	fmt.Printf("app running on port: %s\n", os.Getenv("PORT"))
-	http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("PORT")), nil)
+	log.Printf("Running server on addr %s", addr)
+	http.ListenAndServe(addr, nil)
 }
