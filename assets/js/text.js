@@ -1,7 +1,7 @@
 (function() {
   var sceneOne = [
     {from: 'left', text: 'Hey girl, how you holding up?'},
-    {from: 'right', text: 'I just can\'t get over him Jen'},
+    {from: 'right', text: 'I just can\'t get over him Ashley'},
     {from: 'left', text: 'Mmmm that\'s tough'},
     {from: 'right', text: 'Like he was the one', pause: 200},
     {from: 'left', text: 'Oh totes he was the one'},
